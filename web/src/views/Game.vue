@@ -2,7 +2,7 @@
   <v-container fill-height fluid>
     <v-app-bar absolute>
       <v-toolbar-title v-if="state" style="font-weight: 700">
-        <v-btn icon href="/">
+        <v-btn icon @click="$router.push({ name: 'Home' })">
           <v-icon>mdi-home</v-icon>
         </v-btn>
         <v-btn v-if="state.ticket_url" :depressed="true" :ripple="false"

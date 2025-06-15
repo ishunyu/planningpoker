@@ -1,4 +1,5 @@
 import io from 'socket.io-client';
+import config from '../config';
 
 export default {
     STATUS_CONNECTED: "connected",
@@ -17,7 +18,11 @@ export default {
             return
         }
 
+        const path = config.URL_SUBDIR + "/socket.io";
+        console.log("Connecting to websocket at:", path);
+
         this.socket = io("/", {
+            path: path,
             query: {
                 token: token,
             },
